@@ -1,0 +1,36 @@
+package model;
+
+public class Subject {
+	private int subjectId;
+	private String name;
+
+	public Subject(int subjectId, String name) {
+		this.subjectId = subjectId;
+		this.name = name;
+	}
+
+	public Subject() {
+	}
+
+	public int getSubjectId() {
+		return subjectId;
+	}
+
+	public void setSubjectId(int subjectId) {
+		this.subjectId = subjectId;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return String.format("Subject [subjectId=%s, name=%s]", subjectId, name);
+	}
+
+}
