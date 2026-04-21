@@ -3,6 +3,10 @@ package model;
 import java.util.*;
 
 public class Task {
+	public static final String LOW_PRIORITY = "low";
+	public static final String MEDIUM_PRIORITY = "medium";
+	public static final String HIGH_PRIORITY = "high";
+
 	protected int taskId;
 	protected int subjectId;
 	protected int teacherId;
@@ -12,9 +16,10 @@ public class Task {
 	protected Date timeCreated;
 	protected boolean done;
 	protected Date deadline;
+	protected String priority;
 
 	public Task(int taskId, int subjectId, int teacherId, String title, String description, Date timeCreated,
-			boolean done, Date deadline) {
+			boolean done, Date deadline, String priority) {
 		this.taskId = taskId;
 		this.subjectId = subjectId;
 		this.teacherId = teacherId;
@@ -23,6 +28,7 @@ public class Task {
 		this.timeCreated = timeCreated;
 		this.done = done;
 		this.deadline = deadline;
+		this.priority = priority;
 	}
 
 	public Task() {
@@ -92,11 +98,19 @@ public class Task {
 		this.deadline = deadline;
 	}
 
+	public String getPriority() {
+		return priority;
+	}
+
+	public void setPriority(String priority) {
+		this.priority = priority;
+	}
+
 	@Override
 	public String toString() {
 		return String.format(
-				"Task [taskId=%s, subjectId=%s, teacherId=%s, title=%s, description=%s, timeCreated=%s, done=%s, deadline=%s]",
-				taskId, subjectId, teacherId, title, description, timeCreated, done, deadline);
+				"Task [taskId=%s, subjectId=%s, teacherId=%s, title=%s, description=%s, timeCreated=%s, done=%s, deadline=%s, priority=%s]",
+				taskId, subjectId, teacherId, title, description, timeCreated, done, deadline, priority);
 	}
 
 }
